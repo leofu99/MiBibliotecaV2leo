@@ -65,4 +65,6 @@
     <string name="email_drawer">email</string>
     <string name="usuario_drawer">Mi Biblioteca</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="imagen_facebook">ingreso con facebook</string>
+    <string name="imagen_gmail">ingreso con gmail</string>
 </resources>
