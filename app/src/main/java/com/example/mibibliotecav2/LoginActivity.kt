@@ -12,7 +12,7 @@ import java.util.regex.Pattern
 class LoginActivity : AppCompatActivity() {
 
     val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
-
+    //parte del codigo arreglada
     override fun onStart() {
         super.onStart()
         val user = mAuth.currentUser
@@ -20,7 +20,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
