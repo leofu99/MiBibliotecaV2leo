@@ -4,28 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrestamosFragment">
+    tools:context=".InfoBibliotecaFragment">
 
     <ImageView
-        android:id="@+id/IV_prestamos"
+        android:id="@+id/IV_info_bibliotecas"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="@string/imagen_prestamos"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/knowledge" />
+        app:srcCompat="@drawable/edificio"
+        tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/TV_prestamos"
+        android:id="@+id/TV_info_bibiotecas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/prestamos"
+        android:layout_marginTop="16dp"
+        android:text="@string/info_bibliotecas"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IV_prestamos" />
+        app:layout_constraintTop_toBottomOf="@+id/IV_info_bibliotecas" />
 </androidx.constraintlayout.widget.ConstraintLayout>
