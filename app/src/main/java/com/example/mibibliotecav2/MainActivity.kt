@@ -60,6 +60,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.MO_cerrar_sesion) {
+            val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+            mAuth.signOut()
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
@@ -70,5 +72,4 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
 }

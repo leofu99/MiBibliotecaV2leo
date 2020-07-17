@@ -77,7 +77,7 @@
             <TextView
                 android:id="@+id/TV_avatar_reg"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/avatar_reg"
@@ -86,11 +86,11 @@
 
             <ImageButton
                 android:id="@+id/BT_examinar_reg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:background="@drawable/botonredondo"
-                app:srcCompat="@android:drawable/ic_menu_add"
+                app:srcCompat="@android:drawable/ic_menu_camera"
                 tools:ignore="ContentDescription" />
         </LinearLayout>
 

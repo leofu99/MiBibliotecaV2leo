@@ -114,9 +114,11 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK)
-        //val imageBitmap = data?.extras?.get("data") as Bitmap
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            val imageBitmap = data?.extras?.get("data") as Bitmap
+            BT_examinar_reg.setImageBitmap(imageBitmap)
             Toast.makeText(this, "Imagen subida", Toast.LENGTH_SHORT).show()
+        }
 
     }
 
@@ -128,8 +130,13 @@ class RegisterActivity : AppCompatActivity() {
         notificacionesreg: Boolean
     ) {
 
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+        val myRef: DatabaseReference = database.getReference("tablausuarios")
+        val id: String? = myRef.push().key
+
         val mStorage = FirebaseStorage.getInstance()
-        val photoRef = mStorage.reference.child("tablausuarios")
+        val photoRef = mStorage.reference.child(id!!)
+        var urlPhoto = ""
 
         // Get the data from an ImageView as bytes
         BT_examinar_reg.isDrawingCacheEnabled = true
@@ -140,25 +147,34 @@ class RegisterActivity : AppCompatActivity() {
         val data = baos.toByteArray()
 
         var uploadTask = photoRef.putBytes(data)
-        uploadTask.addOnFailureListener {
-            // Handle unsuccessful uploads
-        }.addOnSuccessListener {
-            // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
-            // ...
-        }
 
-        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
-        val myRef: DatabaseReference = database.getReference("tablausuarios")
-        val id: String? = myRef.push().key
-        val usuario = UsersRemote(
-            id,
-            nombrereg,
-            correoreg,
-            celularreg,
-            ciudadreg,
-            notificacionesreg
-        )
-        //myRef.child(id!!).setValue(usuario)
+        val urlTask = uploadTask.continueWithTask { task ->
+            if (!task.isSuccessful) {
+                task.exception?.let {
+                    throw it
+                }
+            }
+            photoRef.downloadUrl
+        }.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                urlPhoto = task.result.toString()
+
+                val usuario = UsersRemote(
+                    id,
+                    nombrereg,
+                    correoreg,
+                    celularreg,
+                    ciudadreg,
+                    notificacionesreg,
+                    urlPhoto
+                )
+                myRef.child(id).setValue(usuario)
+
+            } else {
+                // Handle failures
+                // ...
+            }
+        }
     }
 
 

@@ -11,13 +11,18 @@ import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
 
+    val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+
+    override fun onStart() {
+        super.onStart()
+        val user = mAuth.currentUser
+        if (user != null) startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
-        val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
-
-
 
         IB_facebook_login.setOnClickListener {
             Toast.makeText(this, "Disponible próximamente", Toast.LENGTH_SHORT).show()
@@ -49,6 +54,7 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             startActivity(Intent(this, MainActivity::class.java))
+                            finish()
 
                         } else {
                             // If sign in fails, display a message to the user.
