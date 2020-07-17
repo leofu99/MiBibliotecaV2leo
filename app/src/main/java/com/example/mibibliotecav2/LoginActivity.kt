@@ -16,8 +16,11 @@ class LoginActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         val user = mAuth.currentUser
-        if (user != null) startActivity(Intent(this, MainActivity::class.java))
-        finish()
+        if (user != null) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
