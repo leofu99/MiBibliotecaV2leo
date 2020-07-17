@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -83,15 +84,14 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/BT_examinar_reg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/botonredondo"
-                android:text="@string/examinar_reg"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
+                app:srcCompat="@android:drawable/ic_menu_add"
+                tools:ignore="ContentDescription" />
         </LinearLayout>
 
         <TextView
