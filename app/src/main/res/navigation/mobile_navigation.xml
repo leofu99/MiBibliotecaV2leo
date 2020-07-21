@@ -37,7 +37,11 @@
         android:id="@+id/prestamosFragment"
         android:name="com.example.mibibliotecav2.PrestamosFragment"
         android:label="@string/prestamos_fragment_label"
-        tools:layout="@layout/fragment_prestamos" />
+        tools:layout="@layout/fragment_prestamos" >
+        <action
+            android:id="@+id/action_prestamosFragment_to_agregarprestamoFragment"
+            app:destination="@id/agregarprestamoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recursosBibliograficosFragment"
         android:name="com.example.mibibliotecav2.RecursosBibliograficosFragment"
@@ -51,5 +55,13 @@
         <action
             android:id="@+id/action_nuevolibroFragment_to_bibliotecaPersonalFragment"
             app:destination="@id/bibliotecaPersonalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarprestamoFragment"
+        android:name="com.example.mibibliotecav2.AgregarprestamoFragment"
+        android:label="AgregarprestamoFragment" >
+        <action
+            android:id="@+id/action_agregarprestamoFragment_to_prestamosFragment"
+            app:destination="@id/prestamosFragment" />
     </fragment>
 </navigation>

@@ -89,4 +89,8 @@
     <string name="titulonuevolibro">Ficha Técnica del Libro</string>
     <string name="notasimportantes">Comentarios, notas o frases relevantes</string>
     <string name="galeria">Galería</string>
+    <string name="tituloprestamos">Nuevo Préstamo</string>
+    <string name="usuarioprestamo">Nombre del Deudor</string>
+    <string name="fecha1">Fecha de Préstamo:</string>
+    <string name="fecha2">Fecha de devolución</string>
 </resources>

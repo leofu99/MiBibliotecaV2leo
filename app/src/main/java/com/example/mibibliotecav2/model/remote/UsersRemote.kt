@@ -24,5 +24,12 @@ class LibrosRemote(
     val portada:String = "",
     val galeria: String = "")
 
-
+class PrestamosRemote(
+   val  id: String? = "",
+    val titulo: String = "",
+    val paginas: String = "",
+    val genero: String = "",
+    val urlportada: String = "",
+    val idprestamo: String = ""
+)
 
