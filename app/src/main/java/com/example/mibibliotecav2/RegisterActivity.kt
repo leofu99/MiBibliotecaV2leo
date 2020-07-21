@@ -72,8 +72,12 @@ class RegisterActivity : AppCompatActivity() {
                         ) { task ->
                             if (task.isSuccessful) {
                                 // Sign in success, update UI with the signed-in user's information
+
                                 Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
+                                val user =  mAuth.currentUser
+                                val idusr = user?.uid
                                 crearUsuarioEnBaseDeDatos(
+                                    idusr,
                                     nombrereg,
                                     correoreg,
                                     celularreg,
@@ -123,6 +127,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun crearUsuarioEnBaseDeDatos(
+        id: String?,
         nombrereg: String,
         correoreg: String,
         celularreg: String,
@@ -132,7 +137,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val myRef: DatabaseReference = database.getReference("tablausuarios")
-        val id: String? = myRef.push().key
+        //val id: String? = myRef.push().key
 
         val mStorage = FirebaseStorage.getInstance()
         val photoRef = mStorage.reference.child(id!!)

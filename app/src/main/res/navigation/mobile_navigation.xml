@@ -8,7 +8,11 @@
         android:id="@+id/bibliotecaPersonalFragment"
         android:name="com.example.mibibliotecav2.BibliotecaPersonalFragment"
         android:label="@string/biblioteca_personal_fragment_label"
-        tools:layout="@layout/fragment_biblioteca_personal" />
+        tools:layout="@layout/fragment_biblioteca_personal" >
+        <action
+            android:id="@+id/action_bibliotecaPersonalFragment_to_nuevolibroFragment"
+            app:destination="@id/nuevolibroFragment" />
+    </fragment>
     <fragment
         android:id="@+id/califiquenosFragment"
         android:name="com.example.mibibliotecav2.CalifiquenosFragment"
@@ -39,4 +43,13 @@
         android:name="com.example.mibibliotecav2.RecursosBibliograficosFragment"
         android:label="@string/recursos_bibliograficos_fragment_label"
         tools:layout="@layout/fragment_recursos_bibliograficos" />
+    <fragment
+        android:id="@+id/nuevolibroFragment"
+        android:name="com.example.mibibliotecav2.NuevolibroFragment"
+        android:label="Agregar Libro"
+        tools:layout="@layout/fragment_nuevolibro" >
+        <action
+            android:id="@+id/action_nuevolibroFragment_to_bibliotecaPersonalFragment"
+            app:destination="@id/bibliotecaPersonalFragment" />
+    </fragment>
 </navigation>

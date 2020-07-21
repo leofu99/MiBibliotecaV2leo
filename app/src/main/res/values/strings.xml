@@ -73,4 +73,20 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="info_bibliotecas">En este sección se indica información relevante de la biblioteca seleccionada</string>
     <string name="ubicacion_mapa">En esta sección, se carga un mapa con la ubicación de la biblioteca</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo_libro">Título del Libro</string>
+    <string name="autor">Autor del Libro</string>
+    <string name="edicion">Número de Edición</string>
+    <string name="lugarpublicacion">Lugar de Publicación</string>
+    <string name="anoedicion">Año de Edición</string>
+    <string name="numpag">Número de Páginas</string>
+    <string name="generolit">Género Literario</string>
+    <string name="isbn">Código ISBN:</string>
+    <string name="examinar">Examinar</string>
+    <string name="portada">Foto de Portada:</string>
+    <string name="guardarlibro">Guardar Libro</string>
+    <string name="titulonuevolibro">Ficha Técnica del Libro</string>
+    <string name="notasimportantes">Comentarios, notas o frases relevantes</string>
+    <string name="galeria">Galería</string>
 </resources>

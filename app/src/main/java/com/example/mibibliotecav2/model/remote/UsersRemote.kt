@@ -9,3 +9,20 @@ class UsersRemote(
     val notificacion: Boolean = false,
     val urlPhoto: String = ""
 )
+
+class LibrosRemote(
+    val id: String? = "",
+    val titulo: String = "",
+    val autor: String = "",
+    val nedicion: String = "",
+    val lpublicacion: String = "",
+    val aedicion: String = "",
+    val npag: String = "",
+    val genero: String = "",
+    val notas: String = "",
+    val isbn: String = "",
+    val portada:String = "",
+    val galeria: String = "")
+
+
+
